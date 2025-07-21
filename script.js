@@ -136,7 +136,7 @@ if (hamburger && navMenu && navOverlay) {
 
 // Initialize EmailJS
 (function() {
-    emailjs.init(""); // You need to add your public key here
+    emailjs.init("wFnHH8BHEebwedJ6Q");
 })();
 
 // Form handling
@@ -439,9 +439,12 @@ class CustomCursor {
     }
 }
 
-// Initialize custom cursor
+// Initialize custom cursor only on desktop
 document.addEventListener('DOMContentLoaded', () => {
-    new CustomCursor();
+    // Only initialize custom cursor on devices with pointer (desktop/laptop)
+    if (window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)').matches) {
+        new CustomCursor();
+    }
 });
 
 // Tech grid hover effects
